@@ -38,33 +38,7 @@
                                     </thead>
                                     <tbody>
 
-                                        {{-- @forelse ($items as $index=>$item)
-                                            <tr>
-                                                <td>{{ $index + 1 }}</td>
-                                                <td>{{ $item->travel_package->title }}</td>
-                                                <td>
-                                                    <img src="{{ Storage::url($item->image) }}" alt=""
-                                                        style="width: 150px;fit:cover" class="img-thumbnail">
-                                                </td>
-                                                <td class="inline">
-                                                    <a href="{{ route('gallery.edit', $item->id) }}"
-                                                        class="btn icon btn-primary"><i class="bi bi-pencil"></i></a>
-                                                    <form action="{{ route('gallery.destroy', $item->id) }}" method="post"
-                                                        class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button class="btn icon btn-danger" type="submit">
-                                                            <i class='fa fa-trash'></i></button>
-                                                    </form>
 
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="4" class="text-center">Data is empty</td>
-                                            </tr>
-                                        @endforelse
-                                         --}}
                                         @forelse ($items as $index=>$item)
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>

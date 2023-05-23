@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">Status Ruang Dosen</h6>
-                                        <h6 class="font-extrabold mb-0">{{ $item->status }}</h6>
+                                        <h6 class="font-extrabold mb-0">{{ $item ? $item->status : '-' }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -123,8 +123,8 @@
                                 <img src="{{ asset('backend/assets/images/faces/1.jpg') }}" alt="Face 1">
                             </div>
                             <div class="ms-3 name">
-                                <h5 class="font-bold">ziman</h5>
-                                <h6 class="text-muted mb-0">ziman@mail.com</h6>
+                                <h5 class="font-bold">{{ $user->name }}</h5>
+                                <h6 class="text-muted mb-0">{{ $user->email }}</h6>
                             </div>
                         </div>
                     </div>

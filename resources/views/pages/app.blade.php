@@ -63,6 +63,7 @@
             font-size: 25px;
         }
     </style>
+
 </head>
 
 <body style="background-image: url('{{ asset('assets/images/bg-siskom.png') }}') ">
@@ -85,305 +86,64 @@
         <h1>RUANG DOSEN</h1>
     </div>
     <div id="status">
-        <span id="teks-status" class="badge text-bg-warning shadow">TUTUP</span>
+
+        <span id="teks-status" class="badge text-bg-warning shadow">{{ $itemRuang->status }}</span>
     </div>
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 60px">
         <div class="carousel-inner">
+
             <div class="carousel-item active" data-bs-interval="5000">
                 <div class="contain">
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">KETUA JURUSAN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198607012014041001-Ikhwan-Ruslianto.png" alt="" />
-                            <strong>Ikhwan Ruslianto, S.Kom., M.Cs.</strong>
-                            <p>198607012014041001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
+                    @foreach ($firstItems as $item)
+                        <div class="box shadow">
+                            <div class="top d-flex justify-content-center">
+                                <span id="tag-box">{{ $item->position }}</span>
+                            </div>
+                            <div class="content mt-4">
+                                <img src="{{ Storage::url($item->image) }}" alt="" />
+                                <strong>{{ $item->name }}</strong>
+                                <p>{{ $item->nip }}</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="btn">
+                                    <span id="status-dosen" class="badge text-bg-warning">{{ $item->status }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">SEKRETARIS JURUSAN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198607202015042001.png" alt="" />
-                            <strong>Rahmi Hidayati, S.Kom., M.Cs.</strong>
-                            <p>198607202015042001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">KEPALA LABORATURIUM</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198802272015041001-Syamsul Bahri.png" alt="" />
-                            <strong>Syamsul Bahri, S.Kom., M.Cs.</strong>
-                            <p>198802272015041001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="contain">
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/196108291989031002.png" alt="" />
-                            <strong>Cucu Suhery, M.A.</strong>
-                            <p>196108291989031002</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/197108092006041001-Sampe Hotlan Sitorus.png" alt="" />
-                            <strong>Sampe Hotlan S., S.Si., M.Kom.</strong>
-                            <p>197108092006041001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198606182020121006-Suhardi.png" alt="" />
-                            <strong>Suhardi, S.T., M.Eng.</strong>
-                            <p>198606182020121006</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198609222014041002.png" alt="" />
-                            <strong>Tedy Rismawan, S.Kom., M.Cs.</strong>
-                            <p>198609222014041002</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="contain">
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198003192015042001.png" alt="" />
-                            <strong>Dwi Marisa Midyanti, S.T., M.Cs.</strong>
-                            <p>198003192015042001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198308172012122001.png" alt="" />
-                            <strong>Fatma Agus S., S.Kom., M.Cs.</strong>
-                            <p>198308172012122001</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198404052019032015-Irma Nirmala.png" alt="" />
-                            <strong>Irma Nirmala, S.T., M.T.</strong>
-                            <p>198404052019032015</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/199206162022032014.png" alt="" />
-                            <strong>Kartika Sari, S.Kom., M.Cs.</strong>
-                            <p>199206162022032014</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="contain">
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/199012012019031017-Uray Ristian.png" alt="" />
-                            <strong>Uray Ristian, S.Kom., M.Kom.</strong>
-                            <p>199012012019031017</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
+            @foreach ($remainingItems->chunk(4) as $chunk)
+                <div class="carousel-item" data-bs-interval="5000">
+                    <div class="contain">
+                        @foreach ($chunk as $item)
+                            <div class="box shadow">
+                                <div class="top d-flex justify-content-center">
+                                    <span id="tag-box">{{ $item->position }}</span>
+                                </div>
+                                <div class="content mt-4">
+                                    <img src="{{ Storage::url($item->image) }}" alt="" />
+                                    <strong>{{ $item->name }}</strong>
+                                    <p>{{ $item->nip }}</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="btn">
+                                        <span id="status-dosen"
+                                            class="badge @if ($item->status == 'TUGAS BELAJAR') text-bg-danger
+                                            @else
+                                                text-bg-warning @endif">{{ $item->status }}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/199305032022031003.png" alt="" />
-                            <strong>Hirzen Hasfani, S.Kom., M.Cs.</strong>
-                            <p>199305032022031003</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/199306202022031005.png" alt="" />
-                            <strong>Kasliono, S.Mat., M.Cs.</strong>
-                            <p>199306202022031005</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">DOSEN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/198112242009121003.png" alt="" />
-                            <strong>Dedi Triyanto, S.T., M.T.</strong>
-                            <p>198112242009121003</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-danger">TUGAS BELAJAR</span>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
-
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="contain">
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">ADMIN JURUSAN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/Yuyun_Yuniartika.png" alt="" />
-                            <strong>Yuyun Yuniartika, S.Si.</strong>
-                            <p>-</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">LABORAN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/Weldi.png" alt="" />
-                            <strong>Weldi, S.Kom.</strong>
-                            <p>-</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box shadow">
-                        <div class="top d-flex justify-content-center">
-                            <span id="tag-box">LABORAN</span>
-                        </div>
-                        <div class="content mt-4">
-                            <img src="images/dosen/Solihun.png" alt="" />
-                            <strong>Solihun, S.Kom.</strong>
-                            <p>-</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="btn">
-                                <span id="status-dosen" class="badge text-bg-warning">LIBUR</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
             data-bs-slide="prev">
@@ -406,5 +166,9 @@
 <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js') }}"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
 </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
 </html>

@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('employee_data', function (Blueprint $table) {
             $table->id();
-            $table->string('position');
+            $table->string('position')->default('DOSEN');
             $table->string('name');
             $table->string('nip');
-            $table->string('status');
+            $table->string('status')->default('ADA');
             $table->text('image');
+            $table->foreignId('users_id')->constrained('users');
             $table->softDeletes();
             $table->timestamps();
         });

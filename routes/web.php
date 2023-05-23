@@ -21,11 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')
-    ->middleware(['auth',])
+    ->middleware(['auth', 'admin'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin');
         Route::resource('data-pegawai', DataPegawaiController::class);
         Route::resource('ruang-dosen', RuangController::class);
     });
+
 
 Auth::routes(['verify' => true]);

@@ -17,8 +17,14 @@ class DataPegawai extends Model
         'name',
         'nip',
         'status',
-        'image'
+        'image',
+        'users_id'
     ];
 
     protected $hidden = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
 }
